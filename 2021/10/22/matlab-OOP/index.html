@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-CN,en,default">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="loch97">
+
+
+
+    <meta name="description" content="just record life">
+
+
+
+<title>matlab_OOP | loch&#39;s blog</title>
+
+
+
+    <link rel="icon" href="/su_loch.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">loch&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/some_webs/COUNT_DOWN.html">CountDown</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">loch&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/some_webs/COUNT_DOWN.html">CountDown</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">matlab_OOP</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">loch97</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">十月 22, 2021&nbsp;&nbsp;14:44:13</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <p>[toc]</p>
+<h1 id="matlab中面向对象程序设计"><a href="#matlab中面向对象程序设计" class="headerlink" title="matlab中面向对象程序设计"></a>matlab中面向对象程序设计</h1><blockquote>
+<p>统一建模语言(UML)：Unified Modeling Language：对程序的一种图像表达方式，matlab要求每个类的定义保存为一个同名的文件，在matlab中建立实体对象的方式是：调用类的构造函数（Constructor）。构造函数和类同名；构造函数返回值构造出来的新的对象。</p>
+</blockquote>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">classdef</span> Point2D &lt; handle</span><br><span class="line">	<span class="keyword">properties</span></span><br><span class="line">	<span class="keyword">end</span></span><br><span class="line">	<span class="keyword">methods</span></span><br><span class="line">	<span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<p>类定义中包含一个属性block和一个方法block</p>
+<p>constructor构造方法：负责产生并返回类的对象，通常还可以用来初始化对象的属性。</p>
+<h2 id="类的属性"><a href="#类的属性" class="headerlink" title="类的属性"></a>类的属性</h2><ul>
+<li>使用dot运算符来访问对象的属性</li>
+<li>属性的默认值（DefaultValue）：在property定义中 直接赋值，或使用表达式赋值，在类定义在matlab装载时执行一次，还可以在constructor对属性变量做初始化。</li>
+<li>常量（Constant）属性：在对象生存周期中值保持不变的属性</li>
+</ul>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">classdef</span> A &lt; handle</span><br><span class="line">	<span class="keyword">properties</span>(Constant)</span><br><span class="line">		R = <span class="built_in">pi</span> / <span class="number">180</span></span><br><span class="line">	<span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<p>如果不显示给定常量属性一个特定的值，则默认为empty double，另，constant property不用创建对象就可以直接使用类中的常量。</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A.R <span class="comment">% A是类名而不是对象名</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>非独立（Dependenet）属性：其值依赖于其他的属性，一旦其他属性改变，该属性也做相应的变化。对象内部没有给属性分配物理存储空间，每次该属性被访问时，其值将被动态地计算，方法由get提供。</li>
+</ul>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">classdef</span> Point2D &lt; handle</span><br><span class="line">	<span class="keyword">properties</span></span><br><span class="line">		x</span><br><span class="line">		y</span><br><span class="line">	<span class="keyword">end</span></span><br><span class="line">	<span class="keyword">properties</span>(Dependent)</span><br><span class="line">		r</span><br><span class="line">	<span class="keyword">end</span></span><br><span class="line">	<span class="keyword">methods</span></span><br><span class="line">		<span class="function"><span class="keyword">function</span> <span class="title">obj</span> = <span class="title">Point2D</span><span class="params">(x0, y0)</span></span></span><br><span class="line">			obj.x = x0;</span><br><span class="line">			obj.y = y0;</span><br><span class="line">		<span class="keyword">end</span></span><br><span class="line">		<span class="function"><span class="keyword">function</span> <span class="title">r</span> = <span class="title">get</span>.<span class="title">r</span><span class="params">(obj)</span> 	% <span class="title">Dependent</span> 属性要放在<span class="title">get</span>方法中</span></span><br><span class="line">			r = <span class="built_in">sqrt</span>(obj.x^<span class="number">2</span> + obj.y^<span class="number">2</span>);</span><br><span class="line">			<span class="built_in">disp</span>(<span class="string">&#x27;get.r called&#x27;</span>);</span><br><span class="line">		<span class="keyword">end</span></span><br><span class="line">	<span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<p>设置为dependent好处：支持dot和向量化操作，若r是一个matrix或vector，在类的外部，可以直接进行矢量操作；若r是一个结构体，可以直接使用dot访问r内部的其他fields。</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">classdef</span> View &lt; handle</span><br><span class="line">	<span class="keyword">properties</span></span><br><span class="line">		hFig</span><br><span class="line">		hEdit</span><br><span class="line">	<span class="keyword">end</span></span><br><span class="line">	<span class="keyword">properties</span>(Dependent)</span><br><span class="line">		text</span><br><span class="line">	<span class="keyword">end</span></span><br><span class="line">	<span class="keyword">methods</span></span><br><span class="line">		<span class="function"><span class="keyword">function</span> <span class="title">obj</span> = <span class="title">View</span><span class="params">()</span></span></span><br><span class="line">			obj.hFig = <span class="built_in">figure</span>();</span><br><span class="line">			obj.hEdit = uicontrol(<span class="string">&#x27;style&#x27;</span>,<span class="string">&#x27;edit&#x27;</span>,<span class="string">&#x27;parent&#x27;</span>,obj.hFig);</span><br><span class="line">		<span class="keyword">end</span></span><br><span class="line">		<span class="function"><span class="keyword">function</span> <span class="title">str</span> = <span class="title">get</span>.<span class="title">text</span><span class="params">(obj)</span></span></span><br><span class="line">			str = get(obj.hEdit, <span class="string">&#x27;String&#x27;</span>);</span><br><span class="line">		<span class="keyword">end</span></span><br><span class="line">	<span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>隐藏（Hiidden）属性</li>
+</ul>
+<blockquote>
+<p>隐藏的效果是在命令行中查看对象的信息时，该属性不会被显示出来。（隐藏类的内部细节）</p>
+</blockquote>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">classdef</span> A &lt; handle</span><br><span class="line">	<span class="keyword">properties</span>(Hidden)</span><br><span class="line">		var</span><br><span class="line">	<span class="keyword">end</span></span><br><span class="line">	<span class="keyword">methods</span>(Hidden)</span><br><span class="line">		<span class="function"><span class="keyword">function</span> <span class="title">internalFunc</span><span class="params">(obj)</span></span></span><br><span class="line">			<span class="built_in">disp</span>(<span class="string">&#x27;I am a hidden function&#x27;</span>);</span><br><span class="line">		<span class="keyword">end</span></span><br><span class="line">	<span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="类的方法"><a href="#类的方法" class="headerlink" title="类的方法"></a>类的方法</h2><ul>
+<li>调用类的方法：1. 使用OOP的dot语法obj.normalize()； 2. 使用传统的函数语法调用成员normalize(obj)</li>
+<li>点调用和函数式低矮用类方法区别<ol>
+<li>p1.normalize符合面向对象风格，程序的可读性高；</li>
+<li>使用dot语法清楚地告诉matlab要调用的是成员方法还是函数。确定用户到底是在调用函数还是类方法，是dispatcher的工作，唯有在执行时，dispatcher才会参与工作；</li>
+<li>使用dot语法，matlab的语法检查器回及时帮助用户检查语法错误。</li>
+</ol>
+</li>
+<li>方法的签名：函数签名 &#x3D; 函数名 + 所属类</li>
+<li>使用disp方法定制对象的显示：可以通过定义类的disp方法（也叫覆盖override）来定制对象在命令行上的输出内容。包含定制disp方法的类的对象，在命令行被用户查询时，会优先调用类的disp方法。</li>
+</ul>
+<h2 id="类的构造函数（Constructor）"><a href="#类的构造函数（Constructor）" class="headerlink" title="类的构造函数（Constructor）"></a>类的构造函数（Constructor）</h2><blockquote>
+<p>是一种特殊的成员方法，和类的名称相同，用来创造类的实例。constructor只能有一个返回值，且必须时新创建的对象。</p>
+</blockquote>
+<p>matlab是弱解释性语言，不能通过参数数目的不同来决定调用哪个参数，类似的功能只能放到函数体中，通过判断参数的个数（nargin）来实现，根据nargin的不同选择不同的代码。</p>
+<p>不带任何参数的构造函数为Default Constructor。</p>
+<h2 id="类的继承"><a href="#类的继承" class="headerlink" title="类的继承"></a>类的继承</h2><blockquote>
+<p>matlab中可以用isa查询一个对象是否属于一个特定的类。UML中继承用空心三角箭头表示。</p>
+</blockquote>
+<ul>
+<li><p>在子类方法中调用父类同名方法</p>
+<p>句柄是一种抽象的思想：隐藏了内核实现的细节，同时为调用提供了方便，保证了内核的安全。子类和父类成员方法可以有相同的名字，并且在子类方法内部可以调用父类的同名方法，在子类中，除同名方法外的其他地方不能调用父类的同名方法。</p>
+<p>调用语法：<code>superMethod@superClass(this, otherArguments)</code></p>
+</li>
+<li><p>多态：建立在继承的基础上，同名的方法被不同的对象调用，能产生不同的行为（形态）。</p>
+</li>
+</ul>
+<h2 id="类之间的基本关系：继承、组合和聚集"><a href="#类之间的基本关系：继承、组合和聚集" class="headerlink" title="类之间的基本关系：继承、组合和聚集"></a>类之间的基本关系：继承、组合和聚集</h2><h2 id="handle类的set和get方法"><a href="#handle类的set和get方法" class="headerlink" title="handle类的set和get方法"></a>handle类的set和get方法</h2><ul>
+<li><strong>set</strong>：set方法给对象属性的赋值提供了一个中间层，可以检查赋值是否符合要求或者检查赋值的类型。还可以在set方法中做一些其他工作，如LOG记录每次属性被赋的值。</li>
+</ul>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">classdef</span> A &lt; handle</span><br><span class="line">	<span class="keyword">properties</span></span><br><span class="line">		a</span><br><span class="line">	<span class="keyword">end</span></span><br><span class="line">	<span class="keyword">methods</span></span><br><span class="line">		<span class="function"><span class="keyword">function</span> <span class="title">set</span>.<span class="title">a</span><span class="params">(obj, val)</span></span></span><br><span class="line">			<span class="keyword">if</span> val &gt;= <span class="number">0</span></span><br><span class="line">				obj.a = val;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">				error(<span class="string">&#x27;a must be positive&#x27;</span>);</span><br><span class="line">			<span class="keyword">end</span></span><br><span class="line">		<span class="keyword">end</span></span><br><span class="line">	<span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<p>load一个对象时，属性set方法会被MATLAB调用，如果这时对象的某些属性值仍是默认值，这些属性会经过set方法，被验证有效性。</p>
+<ul>
+<li><strong>get</strong>：get方法提供了对成员属性查询操作的一个中间层。可以使程序向后兼容。</li>
+</ul>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">classdef</span> Record &lt; handle</span><br><span class="line">	<span class="keyword">properties</span>(Dependent, Hidden)</span><br><span class="line">		data <span class="comment">% 需要把data的名字改成timeStamp（旧属性 -&gt; 新属性）</span></span><br><span class="line">	<span class="keyword">end</span></span><br><span class="line">	<span class="keyword">properties</span></span><br><span class="line">		timestamp</span><br><span class="line">	<span class="keyword">end</span></span><br><span class="line">	<span class="keyword">methods</span></span><br><span class="line">		<span class="function"><span class="keyword">function</span> <span class="title">set</span>.<span class="title">data</span><span class="params">(obj, val)</span></span></span><br><span class="line">			obj.timeStamp = val;</span><br><span class="line">		<span class="keyword">end</span></span><br><span class="line">		<span class="function"><span class="keyword">function</span> <span class="title">val</span> = <span class="title">get</span>.<span class="title">data</span><span class="params">(obj)</span></span></span><br><span class="line">			val = obj.timeStamp;</span><br><span class="line">		<span class="keyword">end</span></span><br><span class="line">	<span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="属性和方法的访问权限"><a href="#属性和方法的访问权限" class="headerlink" title="属性和方法的访问权限"></a>属性和方法的访问权限</h2><p>Access &#x3D; public、protected、private，属性的访问权限还可以被细分为赋值SetAccess和查询GetAccess的权限。</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>loch97</span>
+                    </p>
+                
+                
+                
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/MATLAB/"># MATLAB</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2023/02/21/record/">record</a>
+            
+            
+            <a class="next" rel="next" href="/2021/07/05/About-gdb/">About-gdb</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© loch97 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>
