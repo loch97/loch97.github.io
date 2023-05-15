@@ -204,7 +204,78 @@
         </header>
 
         <div class="post-content">
-            <h1 id="序列"><a href="#序列" class="headerlink" title="序列"></a>序列</h1>
+            <h1 id="序列"><a href="#序列" class="headerlink" title="序列"></a>序列</h1><p>序列用于保存一组有序的数据，所有的数据在序列中都有一个唯一的位置（索引），序列中的数据会按照添加的顺序要分配索引</p>
+<p>序列的分类：</p>
+<ul>
+<li>可变序列（元素可以改变）；列表（list）</li>
+<li>不可变序列：字符串（str）、元组（tuple）</li>
+</ul>
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><p>列表中可以保存任意的对象，索引是从0开始的整数</p>
+<p>获取列表的长度，即列表中元素的个数，用len()函数</p>
+<p>切片语法：列表[起始:结束:步长] ，步长不能为0，但是可以为负数</p>
+<p>+可以将两个列表拼接为一个列表 my_list &#x3D; [1,2,3] + [4,5,6]</p>
+<p>* 可以将列表重复指定的次数 my_list &#x3D; [1,2,3] * 5</p>
+<p>in 与 not in 用来检查指定元素是否存在与列表中；max min 用于查找最大最小值</p>
+<p>两个方法（method）：</p>
+<p>list.index() 获取指定元素在列表第一次出现时的索引，第二个与第三个参数为查找的起始与结束位置</p>
+<p>list.count() 统计指定元素在列表中出现的次数</p>
+<p>修改元素：直接通过索引来修改；通过del来删除元素： del stus[ind]</p>
+<p>以上操作只针对可变序列（list），可以通过list()讲其他序列转化为list</p>
+<h3 id="list方法"><a href="#list方法" class="headerlink" title="list方法"></a>list方法</h3><p>append(): 向列表的最后添加一个元素</p>
+<p>insert(): 向列表指定位置插入一个元素 stus.insert(ind,’str’)</p>
+<p>extend(): 使用新的序列扩展当前序列，stus1.extend(stus2) 等价于 stus1 +&#x3D; stus2</p>
+<p>clear(): 清空序列</p>
+<p>pop(): 根据索引删除并返回被删除的元素 res &#x3D; suts.pop(ind) ind为空则删除最后一个，其实就是栈的pop</p>
+<p>remove(): 删除指定值的元素，如果存在多个，只删除第一个</p>
+<p>reverse(): 反转列表</p>
+<p>sort(): 默认升序，传递reverse&#x3D;True为降序</p>
+<h3 id="range函数"><a href="#range函数" class="headerlink" title="range函数"></a>range函数</h3><p>三个参数：起始位置，结束位置，步长</p>
+<h2 id="元组"><a href="#元组" class="headerlink" title="元组"></a>元组</h2><p>元组是不可变对象，不能尝试为元组中元素重新赋值</p>
+<p>当元组不是空元组时，括号可以省略，其中至少包含一个，（逗号）</p>
+<p>my_tuple&#x3D; (10，20，30，40)</p>
+<p>my_tuple &#x3D; 40,</p>
+<p>元组的解包（解构）：将元组中每一个元素都赋值给一个变量，两边个数一致，也可以在变量前添加一个<em>，此时变量会获取剩余所有元素，但是注意不能同时出现两个以上的</em></p>
+<p>a,b,c,d &#x3D; my_tuple</p>
+<p>a,*b,c &#x3D; my_tuple</p>
+<h1 id="可变对象"><a href="#可变对象" class="headerlink" title="可变对象"></a>可变对象</h1><p>每个对象都保存了三个数据</p>
+<ul>
+<li>id（标识）</li>
+<li>type（类型）</li>
+<li>value（值）</li>
+</ul>
+<h1 id="字典（dict）"><a href="#字典（dict）" class="headerlink" title="字典（dict）"></a>字典（dict）</h1><p>字典属于一种新的数据结构，称为映射（mapping），作用何列表类似，都是用来存储对象的容器。key-value，使用{}来创建字典</p>
+<p>语法：{key1:value1,key2:value2,key3:value3}，其中value可以是任意对象，key是任意的不可变对象（int、str、bool、tuple等）一般会使用str</p>
+<p>使用dict()函数创建字典，每一个参数都是一个键值对<br><code>d = dict(name=&#39;name&#39;,age = 20, gender = &#39;male&#39;)</code></p>
+<p>也可以将一个包含双值子序列的序列转换为字典；双值序列：序列中只有两个值；子序列：序列中的元素也是序列，则称为子序列</p>
+<p>d &#x3D; dict([(‘name’,’name’),(‘age’,20)])</p>
+<p>len() 获取字典中键值对的个数</p>
+<p>get(key,default) 该方法根据键获取值，如果键不在字典中，返回None；也可以指定默认值（第二个参数），返回default</p>
+<p>setdefault(key,default) 该方法向字典中添加key-value，如果key已存在，则返回value，不对字典操作；若key不存在，则添加</p>
+<p>update([other]) 该方法将其他字典中key-value添加到当前字典中，如果有重复的key，后面的会替换当前的</p>
+<p>del 也可以用来删除字典中的key-value</p>
+<p>popitem() 就是简单的pop，返回元素是一个tuple&#x3D;(key,value)</p>
+<p>pop() 返回值为value，此时采用第二个参数default作用也是删除不存在key时，返回default</p>
+<p>clear() 清空字典</p>
+<p>copy() 对字典进行浅复制，复制后的对象和原对象是独立的，修改不会影响。浅复制会简单复制对象内部的值，如果值也是一个可变对象，这个可变对象不会被复制</p>
+<blockquote>
+<p>不同拷贝方式的区别参考：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/54011712">https://zhuanlan.zhihu.com/p/54011712</a></p>
+</blockquote>
+<p>浅拷贝之所以称为浅拷贝，是它仅仅只拷贝了一层，拷贝了最外围的对象本身，内部的元素都只是拷贝了一个引用而已</p>
+<p>对于字典的copy()方法 好像与上述条件是相反的，即对于字典中的可变对象（例如列表、字典等），它们的引用将被共享，即它们的内存地址相同。但是对于字典中的不可变对象（例如字符串、元组、数值类型等），它们的引用不会被共享，即它们的内存地址是不同的。需要注意的是，如果 d 中包含可变对象，例如列表或字典，那么在 d.copy() 执行时，这些可变对象的引用将会被共享，即它们的内存地址是相同的。这是因为浅拷贝只会复制可变对象的引用，而不是复制它们本身。</p>
+<h2 id="遍历字典"><a href="#遍历字典" class="headerlink" title="遍历字典"></a>遍历字典</h2><p>keys() 该方法会返回字典所有的key (返回格式是list)</p>
+<p>values() 该方法会返回所有value</p>
+<p>items() 该方法会返回字典中所有的项，格式为list，序列中包含双值子序列</p>
+<h1 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h1><p>集合与列表非常相似，区别为：集合中只存储不可变对象，是无序的，且不能出现重复的元素</p>
+<p>使用{}来创建集合</p>
+<p>使用set()来创建集合，也可将序列和字典转换为集合，将字典转换为集合的时候，只包含字典中的key</p>
+<p>add() 向集合中添加元素</p>
+<p>update() 将一个集合中元素添加到当前集合中</p>
+<p>pop() 随机删除并返回</p>
+<p>remove() 删除集合中指定元素</p>
+<p>clear() 清空集合</p>
+<p>copy() 对集合进行浅复制</p>
+<h2 id="集合的运算"><a href="#集合的运算" class="headerlink" title="集合的运算"></a>集合的运算</h2><p>&amp; 交集运算 | 并集运算 - 差集运算 ^ 异或集：获取置再一个集合中出现的元素 &lt;&#x3D; 检查一个集合是否是另一个集合的子集 &lt; 检查一个集合是否是另一个集合的真子集 &gt;&#x3D; 超集 &gt; 真超集</p>
+
         </div>
 
         
