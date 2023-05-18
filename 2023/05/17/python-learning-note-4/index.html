@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh-CN,en,default">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="loch97">
+
+
+
+    <meta name="description" content="just record life">
+
+
+
+<title>python-learning-note-4 | loch&#39;s blog</title>
+
+
+
+    <link rel="icon" href="/su_loch.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">loch&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/some_webs/COUNT_DOWN.html">CountDown</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">loch&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/some_webs/COUNT_DOWN.html">CountDown</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">python-learning-note-4</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">loch97</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">五月 17, 2023&nbsp;&nbsp;14:00:41</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/Python%E5%AD%A6%E4%B9%A0/">Python学习</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h1 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h1><p>对象是内存中专门用来存储数据的一块区域，由三部分组成：</p>
+<ul>
+<li>对象的表示（id）</li>
+<li>对象的类型（type）</li>
+<li>对象的值（value）</li>
+</ul>
+<h2 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h2><p>面向对象（oop）简单理解就是语言中的所有操作都是通过对象来进行的，将所有的功能统一保存到对应的对象中</p>
+<h2 id="类-Class"><a href="#类-Class" class="headerlink" title="类(Class)"></a>类(Class)</h2><p>对象是类的实例，类也是一个对象，类就是用来创建对象的对象，类是type类型的对象</p>
+<p>使用类创建对象的流程：创建一个变量-&gt;在内存中创建一个新对象-&gt;将对象的id赋值给变量</p>
+<h2 id="创建对象的流程"><a href="#创建对象的流程" class="headerlink" title="创建对象的流程"></a>创建对象的流程</h2><ul>
+<li>创建一个变量</li>
+<li>在内存中创建一个对象</li>
+<li>_<em>init_</em>(self)方法执行</li>
+<li>将对象的id赋值给变量</li>
+</ul>
+<p>使用class关键字来定义类</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyClass</span>([FatherClass]):</span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+
+<p>isinstance()用来检查一个对象是否是一个类的实例<br><code>res = isinstance(mc,MyClass)</code></p>
+<p>类中的方法每次被调用时，解析器都会自动传递第一个实参，第一个参数，就是<strong>调用方法的对象本身</strong>，一般我们都会将这个参数命名为self</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span> :</span><br><span class="line">    name = <span class="string">&#x27;loch&#x27;</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">hello</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;Hello, my name is %s&#x27;</span> %self.name)</span><br></pre></td></tr></table></figure>
+
+<h2 id="对象的初始化"><a href="#对象的初始化" class="headerlink" title="对象的初始化"></a>对象的初始化</h2><p>在类中可以定义一些特殊方法（魔术方法），它们都是以__开头__结尾的，特殊方法会在特殊时刻自动调用</p>
+<p>init会在对象创建以候离开执行，可以用来向创建的对象中初始化属性</p>
+<blockquote>
+<p>self解析 <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/356325860">https://zhuanlan.zhihu.com/p/356325860</a></p>
+</blockquote>
+<h2 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h2><p>封装指的是隐藏对象中一些不希望被外部所访问到的属性或方法</p>
+<p>提供getter与setter方法使外部可以以访问到属性：</p>
+<ul>
+<li>getter 获取对象中的指定属性（get_属性名）</li>
+<li>setter 用来设置对象的指定属性（set_属性名）</li>
+</ul>
+<p>如果希望属性是只读的，可以去掉setter方法；<br>如果希望属性不能被外部访问，可以去掉getter方法</p>
+<p>使用getter方法获取属性，使用setter方法设置属性；使用getter方法可以表示一些计算的属性</p>
+<p>就是把类内部变量放在__init__中，然后设置get与set方法进行访问</p>
+<p>可以为对象的属性使用双下划线开头，此时为隐藏属性，<strong>只能在类的内部访问</strong>，其实隐藏属性只不过是Python自动为属性改了一个名字，实际上是将名字修改为了，_类名__属性名 比如 __name -&gt;_Person__name</p>
+<p>使用__开头的属性，实际上依然可在外部访问，所以一般不适用，通常会将一些私有属性以_开头，没有特殊需要不要修改私有属性</p>
+<blockquote>
+<p>其实这里写的很混乱，因为是约定俗称的概念，具体的看这个介绍: <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/203841844">https://zhuanlan.zhihu.com/p/203841844</a></p>
+</blockquote>
+<p>property装饰器，用来将一个get方法，转换为对象的属性;使用property装饰的方法，必须和属性名是一样的</p>
+<p>setter方法的装饰器：@属性名.setter</p>
+<blockquote>
+<p>这个写的还不错 -&gt; <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/429115337">https://zhuanlan.zhihu.com/p/429115337</a></p>
+</blockquote>
+<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><p>通过继承我们可以使一个类获取到其他类中的属性和方法，在定义类时，可以在类名后的括号中指定当前类的父类（超类、基类、super）；子类（衍生类）可以直接继承父类中的所有的属性和方法</p>
+<p>issubclass() 检查一个类是否是另一个类的子类</p>
+<p>如果在子类中如果有和父类同名的方法，则通过子类实例去调用方法时，会调用子类的方法而不是父类的方法，这个特点我们成为叫做方法的重写（覆盖，override）</p>
+<p>在子类中，希望可以直接调用父类的__init__来初始化父类中定义的属性，super() 可以用来获取当前类的父类，且通过super()返回对象调用父类方法时，不需要传递self</p>
+<p>多重继承：可以为一个类同时指定多个父类，在类名的()后边添加多个类，来实现多重继承，前边父类的方法会覆盖后边父类的方法</p>
+<p>类名.__bases__ 这个属性可以用来获取当前类的所有父类</p>
+<h2 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h2><p>一个对象可以以不同的形态去呈现（其实就是可以初始化为不同的实例）</p>
+<p>之所以一个对象能通过len()来获取长度，是因为对象中具有一个特殊方法__len__</p>
+<h2 id="类中的属性和方法"><a href="#类中的属性和方法" class="headerlink" title="类中的属性和方法"></a>类中的属性和方法</h2><ol>
+<li>类属性：直接在类中定义的属性是类属性，类属性只能通过类对象来修改，无法通过实例对象修改</li>
+<li>实例属性：通过实例对象添加的属性属于实例属性，实例属性只能通过实例对象来访问和修改，类对象无法访问修改</li>
+<li>实例方法：在类中定义，以self为第一个参数的方法都是实例方法，实例方法在调用时，Python会将调用对象作为self传入，当通过类调用时，不会自动传递self，此时我们必须手动传递self</li>
+</ol>
+<blockquote>
+<p>类对象使用实例方法，感觉很鸡肋（就是要传一个有意义的self，也就是对象进去，参考：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/445040441">https://zhuanlan.zhihu.com/p/445040441</a></p>
+</blockquote>
+<ol start="4">
+<li>类方法：在类内部使用 @classmethod 来修饰的方法属于类方法，类方法的第一个参数是cls，也会被自动传递，cls就是当前的类对象，类方法可以通过类去调用，也可以通过实例调用，没有区别</li>
+<li>静态方法：在类中使用 @staticmethod 来修饰的方法属于静态方法，不需要指定任何的默认参数，静态方法可以通过类和实例去调用；静态方法基本上是一个和当前类无关的方法，它只是一个保存到当前类中的函数，一般都是一些工具方法</li>
+</ol>
+<p>类对象就是可以用类名字直接使用表示的对象，它支持两种操作，直接属性使用和实例化。</p>
+<h2 id="垃圾回收"><a href="#垃圾回收" class="headerlink" title="垃圾回收"></a>垃圾回收</h2><p>在Python中有自动的垃圾回收机制，它会自动将没有被引用的对象删除，del是一个特殊方法，它会在对象被垃圾回收前调用</p>
+<h2 id="特殊方法"><a href="#特殊方法" class="headerlink" title="特殊方法"></a>特殊方法</h2><p>特殊方法都是使用__开头和结尾的，一般不需要我们手动调用，需要在一些特殊情况下自动执行</p>
+<p>__str__（）这个特殊方法会在尝试将对象转换为字符串的时候调用</p>
+<h2 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h2><p>在Python中一个py文件就是一个模块，要想创建模块，实际上就是创建一个python文件</p>
+<ul>
+<li>可以引入同一个模块多次，但是模块的实例只会创建一个</li>
+<li>import可以在程序的任意位置调用，但是一般情况下，import语句都会统一写在程序的开头</li>
+<li>在每一个模块内部都有一个__name__属性，通过这个属性可以获取到模块的名字</li>
+<li>__name__属性值为 __main__的模块是主模块，一个程序中只会有一个主模块</li>
+</ul>
+<p>可以在模块中定义变量，在模块中定义的变量，在引入模块后，就可以直接使用了（很像头文件）</p>
+<p>添加了_的变量，只能在模块内部访问，在通过import * 引入时，不会引入_开头的变量</p>
+<h2 id="包-Package"><a href="#包-Package" class="headerlink" title="包 Package"></a>包 Package</h2><p>普通的模块就是一个py文件，而包是一个文件夹，包中必须要一个一个 __init__.py 这个文件，这个文件中可以包含有包中的主要内容</p>
+<p>__pycache__ 是模块的缓存文件</p>
+<h2 id="Python的标准库"><a href="#Python的标准库" class="headerlink" title="Python的标准库"></a>Python的标准库</h2><p>sys模块，它里面提供了一些变量和函数，使我们可以获取到Python解析器的信息，或者通过函数来操作Python解析器</p>
+<ul>
+<li>sys.argv 获取执行代码时，命令行中所包含的参数，是一个列表，列表中保存了当前命令的所有参数</li>
+<li>sys.modules 获取当前程序中引入的所有模块，是一个字典，字典的key是模块的名字，字典的value是模块对象</li>
+<li>sys.path 是一个列表，列表中保存的是模块的搜索路径</li>
+<li>sys.platform 表示当前Python运行的平台</li>
+<li>sys.exit() 用来退出程序</li>
+</ul>
+<p>pprint模块，给我们提供了一个方法 pprint() 该方法可以用来对打印的数据做简单的格式化</p>
+<p>os 模块让我们可以对操作系统进行访问</p>
+<ul>
+<li>os.environ 获取到系统的环境变量</li>
+<li>os.system() 用来执行操作系统的名字</li>
+</ul>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>loch97</span>
+                    </p>
+                
+                
+                
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/python/"># python</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+            
+            <a class="next" rel="next" href="/2023/05/15/python-learning-note-3/">python-learning-note-3</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© loch97 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>
