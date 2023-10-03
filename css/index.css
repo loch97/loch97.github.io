@@ -228,8 +228,8 @@ figure.highlight {
 }
 html {
   height: 100%;
-  margin: 0;
-  font-size: 62.5%;
+  margin: 10%;
+  font-size: 50%;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
 }
