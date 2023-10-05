@@ -228,8 +228,8 @@ figure.highlight {
 }
 html {
   height: 100%;
-  margin: 10%;
-  font-size: 50%;
+  margin: 0;
+  font-size: 60%;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
 }
@@ -254,7 +254,7 @@ img {
 blockquote {
   position: relative;
   color: #999;
-  font-weight: 400;
+  font-weight: 500;
   background-color: #f7f7f7;
   border-left: 5px solid #777;
   padding: 1rem 1rem 1rem 1.5rem;
@@ -425,7 +425,7 @@ blockquote p {
   }
 }
 #page_main {
-  min-height: 72%;
+  min-height: 80%;
   margin-left: auto;
   margin-right: auto;
   clear: both;
@@ -498,7 +498,7 @@ blockquote p {
 }
 @media (min-width: 34em) {
   .page {
-    width: 82.5%;
+    width: calc(98% - 165px);
     float: right;
     margin-right: 0;
   }
@@ -523,7 +523,7 @@ blockquote p {
 }
 .side-card p,
 .side-card li {
-  font-size: 1.4rem;
+  font-size: 2rem;
   line-height: 1.5;
 }
 .author-avatar {
