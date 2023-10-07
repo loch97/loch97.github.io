@@ -102,5 +102,3 @@ $(function () {
     });
 
 })
-
-<script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=x8t4yNv0ca8QBn4ffIloy78LXQEV1BQP0KteG-gyj_E&cl=ffffff&w=a"></script>
