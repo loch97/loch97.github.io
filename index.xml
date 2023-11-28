@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Introduction on Junjie Wu</title>
+    <link>https://loch97.github.io/</link>
+    <description>Recent content in Introduction on Junjie Wu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="https://loch97.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Analysis of WAIC QoS Guarantees Using Wireless LAN Technology</title>
+      <link>https://loch97.github.io/docs/pub1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://loch97.github.io/docs/pub1/</guid>
+      <description>Authors: Junjie Wu, Qiao Li and Yuedong Zhuo
+From: 2022 21st International Symposium on Communications and Information Technologies (ISCIT)
+Abstract: Wireless avionics intra-communication (WAIC) can increase efficiency and flexibility while reducing cable weight and maintenance costs. Unlike WLAN applications for in-flight entertainment (IFE) systems, WAIC focuses more on quality of service (QoS) requirements, especially low latency. In order to explicitly reflect the data transmission capability of the system, it is considered to use the concept of effective capacity (EC), which is a cross-layer channel model combining physical and data link layers.</description>
+    </item>
+    <item>
+      <title>Relay-based Wireless Avionics Intra-Communication (WAIC)</title>
+      <link>https://loch97.github.io/posts/waic/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://loch97.github.io/posts/waic/</guid>
+      <description>Investigated the feasibility of relay-based wireless avionics intra-communication (WAIC) using IEEE 802.11 standard. Developed a SolidWorks model of the avionics compartment to simulate multipath channel (ray-tracing algorithm) and fading effects. Analyzed the delay-violation probability performance of the transmitter under different fading conditions (flat and frequency-selective) using the effective capacity model (Stochastic Network Calculus), and explored the impact of variable-bit-rate traffic on the performance. Proposed a power allocation scheme to maximize the effective capacity of a single relay system (When the QoS exponent approaches infinity, the effective capacity degenerates to zero-outage capacity).</description>
+    </item>
+    <item>
+      <title>Simulation and analysis of MIMO channel for wireless avionics intra-communications</title>
+      <link>https://loch97.github.io/docs/pub2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://loch97.github.io/docs/pub2/</guid>
+      <description>Authors: Zhuo Yuedong, Li Qiao, Lu Guangshan, Wu Junjie
+From: Acta Aeronautica et Astronautica Sinica(in Chinese)
+Link </description>
+    </item>
+    <item>
+      <title>Aerial Bird Object Detection</title>
+      <link>https://loch97.github.io/posts/bird/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://loch97.github.io/posts/bird/</guid>
+      <description>Developed a comprehensive dataset of bird images from video frames, including various species, poses, and backgrounds, to serve as a foundation for training and testing the YOLOv4 model. Employed and optimized YOLOv4 for bird detection in aerial images using Python and Tensorflow, with a focus on improving model accuracy and robustness. Evaluated the performance of YOLOv4, comparing results with YOLOv3 and showed improved detection performance of YOLOv4 in the presence of occlusion and overlapping cases.</description>
+    </item>
+    <item>
+      <title>Localization of fundus macular lesions</title>
+      <link>https://loch97.github.io/posts/location/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://loch97.github.io/posts/location/</guid>
+      <description> Utilized traditional image processing techniques to extract blood vessels from fundus images and localize the macular region using a template-matching algorithm. Developed and trained a Gradient Boosting Machine classifier to classify lesion images, demonstrating good robustness across different datasets. </description>
+    </item>
+  </channel>
+</rss>

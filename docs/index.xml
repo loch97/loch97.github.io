@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Publications on Junjie Wu</title>
+    <link>https://loch97.github.io/docs/</link>
+    <description>Recent content in Publications on Junjie Wu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="https://loch97.github.io/docs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Analysis of WAIC QoS Guarantees Using Wireless LAN Technology</title>
+      <link>https://loch97.github.io/docs/pub1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://loch97.github.io/docs/pub1/</guid>
+      <description>Authors: Junjie Wu, Qiao Li and Yuedong Zhuo
+From: 2022 21st International Symposium on Communications and Information Technologies (ISCIT)
+Abstract: Wireless avionics intra-communication (WAIC) can increase efficiency and flexibility while reducing cable weight and maintenance costs. Unlike WLAN applications for in-flight entertainment (IFE) systems, WAIC focuses more on quality of service (QoS) requirements, especially low latency. In order to explicitly reflect the data transmission capability of the system, it is considered to use the concept of effective capacity (EC), which is a cross-layer channel model combining physical and data link layers.</description>
+    </item>
+    <item>
+      <title>Simulation and analysis of MIMO channel for wireless avionics intra-communications</title>
+      <link>https://loch97.github.io/docs/pub2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://loch97.github.io/docs/pub2/</guid>
+      <description>Authors: Zhuo Yuedong, Li Qiao, Lu Guangshan, Wu Junjie
+From: Acta Aeronautica et Astronautica Sinica(in Chinese)
+Link </description>
+    </item>
+  </channel>
+</rss>
