@@ -30,7 +30,7 @@ Abstract: Wireless avionics intra-communication (WAIC) can increase efficiency a
       <guid>https://loch97.github.io/docs/pub2/</guid>
       <description>Authors: Zhuo Yuedong, Li Qiao, Lu Guangshan, Wu Junjie
 From: Acta Aeronautica et Astronautica Sinica(in Chinese)
-Link </description>
+Abstract: Wireless avionics intra-communications (WAIC) wideband intra-connection can be achieved by using multi-antenna wireless local aera networks (WLAN). In avionics cabin, the reflection of signals between cabin structure and avionics equipment racks is the main factor causing multipath fading. Moreover, the correlation between received signals from different antennas generally cannot be disregarded when multiple-input multiple-output (MIMO) transmission is per-formed.</description>
     </item>
     <item>
       <title>Aerial Bird Object Detection</title>
